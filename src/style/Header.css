@@ -1,0 +1,30 @@
+/*Header*/
+.header {
+    background-color: #6A645A;
+    color: white;
+    padding: 10px
+}
+
+.title {
+    font-family: "cursive";
+    font-size: 50px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    color: white;
+    font-weight: bolder;
+}
+
+li {
+    list-style-type: none;
+    font-size: larger;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
