@@ -1,5 +1,6 @@
 import React from 'react'
 import "../style/Footer.css"
+import { TextField } from '@mui/material'
 
 //inmport icons
 import insta from "../assets/instagram.svg"
@@ -34,7 +35,7 @@ export const Footer = () => {
                 <div className="footer-section" id="newsletter">
                     <p className="title-column">Inscrivez vous à notre Newsletter</p>
                     <div className="newsletter">
-                        <input type="text" placeholder="votre email" class="newsletter-input"></input>
+                        <TextField type="text" placeholder="votre email" className="newsletter-input" />
                         <button className="newsletter-button">Rejoindre</button>
                     </div>
                 </div>

@@ -1,6 +1,14 @@
 import React from "react"
 import "../style/Homepage.css"
 
+//import component
+import { CardProduct } from "../component/CardProduct/CardProduct"
+import { MiniCardProduct } from "../component/CardProduct/MiniCardProduct"
+
+import { dataPlants } from "../data.js/product"
+import image from "../assets/generic-image.jpg"
+import flowerToOfferImg from "../assets/Blooming-cuate.svg"
+
 export const HomePage = () => {
 
     return (
@@ -13,78 +21,31 @@ export const HomePage = () => {
                     <button className="sidebar-link">Retrouvez nos inspirations ici</button>
                 </div>
                 <div className="card-container">
-                    <div className="card">
-                        <img src={require("../assets/aloeVera.jpg")} alt="aloe vera" />
-                        <h3>Aloe Vera</h3>
-                        <p>Prix</p>
-                    </div>
-                    <div className="card">
-                        <img src="../assets/areca.jpg" alt="areca" />
-                        <h3>Areca</h3>
-                        <p>Prix</p>
-                    </div>
-                    <div className="card">
-                        <img src="./assets/ficus_giseng.jpg" alt="ficus giseng" />
-                        <h3>Ficus Giseng</h3>
-                        <p>Prix</p>
-                    </div>
-                    <div className="card">
-                        <img src="./assets/lyrata.jpg" alt="lyrata" />
-                        <h3>Ficus Lyrata</h3>
-                        <p>Prix</p>
-                    </div>
-                    <div className="card">
-                        <img src="./assets//monstera.jpg" alt="monstera" />
-                        <h3>Monstera</h3>
-                        <p>Prix</p>
-                    </div>
-                    <div className="card">
-                        <img src="./assets/pothos.jpg" alt="pothos" />
-                        <h3>Pothos</h3>
-                        <p>Prix</p>
-                    </div>
+                    {dataPlants.map((product, index) => {
+                        if (product.category === "tropical") {
+                            console.log(product)
+                            return (
+                                <CardProduct
+                                    titre={product.name}
+                                    price={product.price}
+                                    image={image}
+                                />
+                            )
+                        }
+
+                    })}
                 </div>
             </div>
             < div className="second-container" >
                 <div className="second-sidebar">
                     <h2 className="sidebar-text">Nous avons aussi un large choix de fleurs qui pourrons vous plaire</h2>
                     <div className="mini-card-container">
-                        <div className="mini-card">
-                            <img className="mini-image" src="./assets/roses.jpeg" alt="roses" />
-                            <p>Roses</p>
-                        </div>
-                        <div className="mini-card">
-                            <img className="mini-image" src="./assets/lilas.jpg" alt="pothos" />
-                            <p>Lilas</p>
-                        </div>
-                        <div className="mini-card">
-                            <img className="mini-image" src="./assets/orchidée.jpg" alt="pothos" />
-                            <p>Orchidée</p>
-                        </div>
-                        <div className="mini-card">
-                            <img className="mini-image" src="./assets/bouquet_fleur.jpg" alt="pothos" />
-                            <p>Bouquet</p>
-                        </div>
+
                     </div>
                     <button className="sidebar-link">Découvrez nos fleurs ici</button>
                     <h2 className="sidebar-text">...avec leur variante en fleurs séchées</h2>
                     <div className="mini-card-container">
-                        <div className="mini-card">
-                            <img className="mini-image" src="./assets/roses_sechee.jpg" alt="roses" />
-                            <p>Roses</p>
-                        </div>
-                        <div className="mini-card">
-                            <img className="mini-image" src="./assets/lilas_sechee.jpg" alt="pothos" />
-                            <p>Lilas</p>
-                        </div>
-                        <div className="mini-card">
-                            <img className="mini-image" src="./assets/fleur_pampa.jpg" alt="pothos" />
-                            <p>Fleur de pampa</p>
-                        </div>
-                        <div className="mini-card">
-                            <img className="mini-image" src="./assets/bouquet_sechee.jpg" alt="pothos" />
-                            <p>Bouquet seché</p>
-                        </div>
+
                     </div>
                     <button className="sidebar-link">Découvrez nos fleurs séchées ici</button>
 
@@ -92,7 +53,7 @@ export const HomePage = () => {
                 <div className="second-sidebar">
                     <h3>Qu'est-ce que vous pouvez faire avec des fleurs ?</h3>
                     <section>
-                        <img src="./assets/Blooming-cuate.svg" />
+                        <img src={flowerToOfferImg} />
                         <p>Les offrir ou simplement pour vous faire plaisir.</p>
 
                         <p>Certaines fleurs sont également comestible. Retrouvez toute la catégorie de fleurs comestible ici :

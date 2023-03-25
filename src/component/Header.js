@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import '../style/Header.css'
 
 
@@ -9,11 +11,11 @@ export const Header = () => {
                 <h1 className="title">Lorant</h1>
             </div>
             <nav>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="./view/productPage.html">Tous nos produits</a></li>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to="/products">Nos produits</Link></li>
                 <li>Soldes</li>
                 <li>Panier</li>
-                <li><a href="./view/contactUs.html">Nous contacter</a></li>
+                <li><Link to='/contact'>Contactez nous</Link></li>
             </nav>
         </div>
     )
