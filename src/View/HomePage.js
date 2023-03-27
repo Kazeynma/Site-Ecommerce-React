@@ -45,10 +45,30 @@ export const HomePage = () => {
                     <button className="sidebar-link">Découvrez nos fleurs ici</button>
                     <h2 className="sidebar-text">...avec leur variante en fleurs séchées</h2>
                     <div className="mini-card-container">
-
+                        {dataPlants.map((product, index) => {
+                            if (product.category === "flower") {
+                                return (
+                                    <MiniCardProduct
+                                        titre={product.name}
+                                        image={image}
+                                    />
+                                )
+                            }
+                        })}
                     </div>
                     <button className="sidebar-link">Découvrez nos fleurs séchées ici</button>
-
+                    <div className="mini-card-container">
+                        {dataPlants.map((product, index) => {
+                            if (product.category === "dried-flower") {
+                                return (
+                                    <MiniCardProduct
+                                        titre={product.name}
+                                        image={image}
+                                    />
+                                )
+                            }
+                        })}
+                    </div>
                 </div>
                 <div className="second-sidebar">
                     <h3>Qu'est-ce que vous pouvez faire avec des fleurs ?</h3>

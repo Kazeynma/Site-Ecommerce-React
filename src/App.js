@@ -8,6 +8,8 @@ import { Footer } from './component/Footer'
 import { HomePage } from "./View/HomePage"
 import { ContactUs } from './View/ContactUs';
 import { Productpage } from './View/ProductPage';
+import { Login } from './View/Login';
+import { CreateAccoount } from './View/CreateAccount';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/contact" element={<ContactUs />} />
           <Route exact path="/products" element={<Productpage />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/account/create" element={<CreateAccoount />} />
         </Routes>
       </Router>
       <Footer />

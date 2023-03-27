@@ -16,6 +16,7 @@ export const Header = () => {
                 <li>Soldes</li>
                 <li>Panier</li>
                 <li><Link to='/contact'>Contactez nous</Link></li>
+                <li><Link to='/login'>Connexion</Link></li>
             </nav>
         </div>
     )
